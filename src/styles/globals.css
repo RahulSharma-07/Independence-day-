@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* ── Colours ── */
+  --color-saffron: #FF9933;
+  --color-saffron-dark: #E67E22;
+  --color-white: #FFFFFF;
+  --color-off-white: #FDFDFB;
+  --color-green: #138808;
+  --color-green-dark: #0D6606;
+  --color-navy: #000080;
+  --color-navy-light: #1A1A6E;
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #5A5A5A;
+  --color-border: #E5E5E0;
+  --color-error: #D32F2F;
+
+  /* ── Fonts — use the CSS variables set by next/font on <html> ── */
+  --font-display: var(--font-heading), 'Poppins', system-ui, sans-serif;
+  --font-heading: var(--font-heading), 'Poppins', system-ui, sans-serif;
+  --font-body:    var(--font-body),    'Inter',   system-ui, sans-serif;
+  --font-quote:   var(--font-quote),   'Playfair Display', Georgia, serif;
+  --font-button:  var(--font-body),    'Inter',   system-ui, sans-serif;
+
+  /* ── Spacing ── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+  --space-8: 96px;
+
+  /* ── Radius ── */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 999px;
+
+  /* ── Shadows ── */
+  --shadow-card:       0 2px 8px rgba(0,0,0,0.08);
+  --shadow-card-hover: 0 8px 24px rgba(0,0,0,0.12);
+  --shadow-modal:      0 16px 48px rgba(0,0,0,0.24);
+  --shadow-focus:      0 0 0 3px rgba(0,0,128,0.1);
+
+  /* ── Sizes ── */
+  --max-content: 1280px;
+  --max-modal:   560px;
+}
+
+/* ── Base reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body), 'Inter', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Focus ── */
+:focus-visible {
+  outline: 2px solid var(--color-navy);
+  outline-offset: 2px;
+}
+
+/* ── Selection ── */
+::selection {
+  background-color: rgba(255, 153, 51, 0.25);
+  color: var(--color-text-primary);
+}
+
+/* ── Elements ── */
+img { max-width: 100%; height: auto; display: block; }
+
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+input { font-family: inherit; font-size: inherit; }
+
+a { color: var(--color-navy); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Utility classes ── */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0;
+  margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+
+/* Container — consistent max-width + horizontal padding across all sections */
+.container {
+  width: 100%;
+  max-width: var(--max-content);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+@media (max-width: 640px) {
+  .container { padding-inline: 16px; }
+}
+
+/* Section — consistent vertical rhythm */
+.section {
+  padding-block: 112px;
+}
+
+@media (max-width: 640px) {
+  .section { padding-block: 64px; }
+}
+
+/* Fighter card gallery grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  background: var(--color-navy);
+  color: var(--color-white);
+  border-radius: var(--radius-sm);
+  z-index: 10000;
+  font-weight: 600;
+}
+.skip-link:focus { top: 16px; }

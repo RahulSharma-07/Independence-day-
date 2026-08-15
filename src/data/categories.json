@@ -1,0 +1,60 @@
+{
+  "categories": [
+    {
+      "id": "revolutionaries",
+      "name": "Revolutionaries & Armed Resistance",
+      "description": "Those who took up arms against colonial rule through direct action and revolutionary struggle.",
+      "color": "#E67E22",
+      "icon": "flame",
+      "order": 1
+    },
+    {
+      "id": "congress",
+      "name": "Indian National Congress & Mass Movements",
+      "description": "Leaders of the mainstream nationalist movement who mobilized millions through civil disobedience and non-cooperation.",
+      "color": "#138808",
+      "icon": "users",
+      "order": 2
+    },
+    {
+      "id": "women",
+      "name": "Women Freedom Fighters",
+      "description": "Women who broke barriers to fight for independence, often overlooked in traditional narratives.",
+      "color": "#D32F2F",
+      "icon": "user",
+      "order": 3
+    },
+    {
+      "id": "1857",
+      "name": "Revolt of 1857",
+      "description": "The first major uprising against British rule, marking the beginning of organized resistance.",
+      "color": "#6D4C41",
+      "icon": "sword",
+      "order": 4
+    },
+    {
+      "id": "tribal",
+      "name": "Tribal & Regional Leaders",
+      "description": "Indigenous and regional leaders who resisted colonial exploitation of their lands and people.",
+      "color": "#1565C0",
+      "icon": "mountain",
+      "order": 5
+    },
+    {
+      "id": "ina",
+      "name": "Indian National Army",
+      "description": "Soldiers and leaders of the INA who fought alongside Japanese forces to liberate India.",
+      "color": "#BF360C",
+      "icon": "flag",
+      "order": 6
+    },
+    {
+      "id": "other",
+      "name": "Other Important Figures",
+      "description": "Intellectuals, diplomats, and organizers whose contributions shaped the freedom struggle.",
+      "color": "#6A1B9A",
+      "icon": "book-open",
+      "order": 7
+    }
+  ]
+}
